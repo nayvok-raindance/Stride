@@ -20,6 +20,12 @@ export default {
                 'blueDark': '#1E6F9F',
                 'danger': '#E25858',
             },
+            fontFamily: {
+                'base': ['Inter', 'sans-serif']
+            },
+            lineHeight: {
+                'base': '140%'
+            }
         },
     },
     plugins: [],
