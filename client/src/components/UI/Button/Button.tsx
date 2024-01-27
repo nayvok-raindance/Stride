@@ -5,13 +5,14 @@ const Button: FC<ButtonProps> = ({children, variant = 'primary', size = 'large',
     const baseClassName = "text-gray100 p-4 font-bold rounded-lg flex justify-center items-center gap-2 ease-out duration-300"
     const primaryClassName = "bg-blueDark hover:bg-blue"
     const secondaryClassName = "bg-purpleDark hover:bg-purple"
+    const transparentClassName = "hover:bg-gray400"
     const largeClassName = "px-7 py-2"
     const smallClassName = "p-4"
 
     return (
         <button {...props} className={`
             ${baseClassName} 
-            ${variant === "primary" ? primaryClassName : secondaryClassName}
+            ${variant === "primary" ? primaryClassName : variant === "transparent" ? transparentClassName : secondaryClassName}
             ${size === "small" ? smallClassName : largeClassName}
             `}>
             {children}
@@ -21,7 +22,7 @@ const Button: FC<ButtonProps> = ({children, variant = 'primary', size = 'large',
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: 'small' | 'large';
-    variant?: 'primary' | 'secondary'
+    variant?: 'primary' | 'secondary' | 'transparent';
 }
 
 export default Button;
