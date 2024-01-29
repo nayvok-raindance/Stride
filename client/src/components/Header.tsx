@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 const Header = () => {
     return (
-        <header className={'bg-gray700 flex justify-between items-center px-5 md:px-14 py-4'}>
+        <header className={'bg-gray700 flex justify-between items-center px-4 md:px-14 py-4'}>
             <Link to={'/'} className={'cursor-pointer'}>
                 <img src={Logo} alt="logo"/>
             </Link>

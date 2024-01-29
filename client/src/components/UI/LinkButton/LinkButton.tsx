@@ -1,9 +1,9 @@
 import {Link} from "react-router-dom";
 import {FC, ReactNode} from 'react';
 
-const LinkButton: FC<LinkButtonProps> = ({children, to, variant = 'secondary', size = 'large'}) => {
+const LinkButton: FC<LinkButtonProps> = ({children, to, variant = 'secondary', size = 'large', userClass}) => {
 
-    const baseClassName = "text-gray100 font-bold rounded-lg flex justify-center items-center gap-2 ease-out duration-300"
+    const baseClassName = "text-gray100 text-md/base rounded-lg flex justify-center items-center gap-2 ease-out duration-300"
     const secondaryClassName = "hover:bg-gray400"
     const primaryClassName = "bg-purpleDark hover:bg-purple"
     const largeClassName = "px-7 py-2"
@@ -15,6 +15,7 @@ const LinkButton: FC<LinkButtonProps> = ({children, to, variant = 'secondary', s
             ${baseClassName} 
             ${variant === "primary" ? primaryClassName : secondaryClassName}
             ${size === "small" ? smallClassName : largeClassName}
+            ${userClass}
             `}>
             {children}
         </Link>
@@ -23,6 +24,7 @@ const LinkButton: FC<LinkButtonProps> = ({children, to, variant = 'secondary', s
 
 export interface LinkButtonProps {
     children?: ReactNode;
+    userClass?: string;
     to: string;
     variant?: 'primary' | 'secondary';
     size?: 'small' | 'large'

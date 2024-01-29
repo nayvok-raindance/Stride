@@ -1,8 +1,8 @@
 import {ButtonHTMLAttributes, FC} from 'react';
 
-const Button: FC<ButtonProps> = ({children, variant = 'primary', size = 'large', ...props}) => {
+const Button: FC<ButtonProps> = ({children, variant = 'primary', size = 'large', userClass,...props}) => {
 
-    const baseClassName = "text-gray100 p-4 font-bold rounded-lg flex justify-center items-center gap-2 ease-out duration-300"
+    const baseClassName = "text-gray100 text-md/base p-4 rounded-lg flex justify-center items-center gap-2 ease-out duration-300"
     const primaryClassName = "bg-blueDark hover:bg-blue"
     const secondaryClassName = "bg-purpleDark hover:bg-purple"
     const transparentClassName = "hover:bg-gray400"
@@ -14,6 +14,7 @@ const Button: FC<ButtonProps> = ({children, variant = 'primary', size = 'large',
             ${baseClassName} 
             ${variant === "primary" ? primaryClassName : variant === "transparent" ? transparentClassName : secondaryClassName}
             ${size === "small" ? smallClassName : largeClassName}
+            ${userClass}
             `}>
             {children}
         </button>
@@ -22,6 +23,7 @@ const Button: FC<ButtonProps> = ({children, variant = 'primary', size = 'large',
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: 'small' | 'large';
+    userClass?: string;
     variant?: 'primary' | 'secondary' | 'transparent';
 }
 
