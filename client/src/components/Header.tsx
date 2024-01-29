@@ -9,8 +9,8 @@ const Header = () => {
                 <img src={Logo} alt="logo"/>
             </Link>
             <div className={'flex gap-2 items-center'}>
-                <LinkButton to={'/signIn'} size={'large'}>Sign in</LinkButton>
-                <LinkButton to={'/signUp'} variant={'primary'} size={'large'}>Sign up</LinkButton>
+                <LinkButton to={'/login'} size={'large'}>Sign in</LinkButton>
+                <LinkButton to={'/register'} variant={'primary'} size={'large'}>Sign up</LinkButton>
             </div>
         </header>
     );
