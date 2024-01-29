@@ -1,3 +1,6 @@
 [submodule "server"]
 	path = server
 	url = https://github.com/RainDance74/Stride
+[submodule "client"]
+	path = client
+	url = https://github.com/nayvok/Stride
